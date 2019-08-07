@@ -9,13 +9,11 @@ import javax.swing.Timer;
 public class MazeBoard extends JPanel implements ActionListener{
 
 	Maze maze;
-	MazeSolver solver;
 	
 	public MazeBoard()
 	{
     	setBackground(Color.WHITE);
     	maze = new Maze();
-    	solver = new MazeSolver(maze);
     	
     	Timer timer = new Timer(10, this);
         timer.start();
