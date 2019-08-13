@@ -1,4 +1,6 @@
+
 import java.awt.Graphics;
+
 import java.util.Random;
 import java.util.Stack;
 import java.util.Vector;
@@ -6,8 +8,8 @@ import java.util.Vector;
 public class Maze {
 	
 	// The maze will have cells in a 30x18 matrix
-	private static int xCells = 30;
-	private static int yCells = 18;
+	static int xCells = 30;
+	static int yCells = 18;
 	private static int WIDTH = 1505;
 	private static int HEIGHT = 930;
 	Random rand;
