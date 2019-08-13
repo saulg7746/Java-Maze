@@ -38,7 +38,8 @@ public class cell {
 		g.setColor(Color.WHITE);
 		g.fillRect(xLocation, yLocation, CELL_WIDTH, CELL_HEIGHT);
 		g.setColor(Color.BLACK);
-		
+		//System.out.println("(" + xLocation + "," + yLocation + ")");
+		g.drawString("(" + xCoordinate + "," + yCoordinate + ")" , xLocation+15, yLocation+15);
 		// Draws a Line if walls are still present
 		if(top)
 			g.drawLine(xLocation, yLocation, xLocation+CELL_WIDTH, yLocation);
