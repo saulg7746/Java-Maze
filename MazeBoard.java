@@ -9,13 +9,15 @@ import javax.swing.Timer;
 public class MazeBoard extends JPanel implements ActionListener{
 
 	Maze maze;
+	MazeSolver solver;
 	
 	public MazeBoard()
 	{
     	setBackground(Color.WHITE);
     	maze = new Maze();
+    	solver = new MazeSolver(maze);
     	
-    	Timer timer = new Timer(10, this);
+    	Timer timer = new Timer(1, this);
         timer.start();
         setFocusable(true);
 	}
@@ -24,12 +26,16 @@ public class MazeBoard extends JPanel implements ActionListener{
 	public void paintComponent(Graphics g )
 	{
 	    maze.paint(g);
+	    solver.paint(g);
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
-		maze.makeMaze();
+		if(maze.solved())
+			solver.solve(0,0);
+		else
+			maze.makeMaze();
 		repaint();
 	}
 
